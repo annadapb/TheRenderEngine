@@ -1,7 +1,6 @@
+# CONTRIBUTING
 Thank you for your interest. Public contribution are currently not accepted.
 I will not merge any pull requests.
-
-# CONTRIBUTING
 
 # Steps
 
