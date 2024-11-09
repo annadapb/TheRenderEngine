@@ -10,11 +10,11 @@ class World:
         '''
 
         ## Contains all the meshes present in the scene.
-        self._meshes = list()
+        self._meshes = dict()
         ## Contains all the lights present in the scene.
-        self._lights = list()
+        self._lights = dict()
         ## Contains all the cameras present in the scene.
-        self._cameras = list()
+        self._cameras = dict()
 
     def __repr__(self,):
         ''' Return info about the current scene. '''
@@ -49,10 +49,10 @@ class World:
         # TODO A: Create a Camera class.
         # TODO H: Check if the input is a Camera and add it to self._cameras
 
-    def render(self, camera_idx=0):
+    def render(self, camera='main'):
         '''! Renders the current scene
         @param camera_idx The index of the camera which should be used to render
-        the scene. Defaults to the first camera added to the scene.
+        the scene. Defaults to the 'main' camera added to the scene.
         @return Nothing. The result of the renderer is present in the
         camera film.
         '''
