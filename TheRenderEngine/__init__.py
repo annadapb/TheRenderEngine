@@ -19,7 +19,7 @@ class World:
     def __repr__(self,):
         ''' Return info about the current scene. '''
         return "Not supported yet."
-        # TODO: Return string of all the lights camera and meshes in
+        # TODO H: Return string of all the lights camera and meshes in
         # current scene.
 
     def add_mesh(self, mesh):
@@ -28,8 +28,8 @@ class World:
          @return Nothing is returned.
         '''
         pass
-        # TODO: Create a Mesh class.
-        # TODO: Check if the input is a Mesh and add it to self._meshes
+        # TODO H: Create a Mesh class.
+        # TODO A: Check if the input is a Mesh and add it to self._meshes
 
     def add_light(self, light):
         '''! Adds a light to the world.
@@ -37,8 +37,8 @@ class World:
         @return Nothing is returned.
         '''
         pass
-        # TODO: Create a Light class.
-        # TODO: Check if the input is a Light and add it to self._lights
+        # TODO H: Create a Light class.
+        # TODO A: Check if the input is a Light and add it to self._lights
  
     def add_camera(self, camera):
         '''! Adds a Camera to the world.
@@ -46,8 +46,8 @@ class World:
         @return Nothing is returned.
         '''
         pass
-        # TODO: Create a Camera class.
-        # TODO: Check if the input is a Camera and add it to self._cameras
+        # TODO A: Create a Camera class.
+        # TODO H: Check if the input is a Camera and add it to self._cameras
 
     def render(self, camera_idx=0):
         '''! Renders the current scene
