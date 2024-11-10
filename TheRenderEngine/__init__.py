@@ -1,4 +1,5 @@
 from constants import *
+from primitives import Object
 
 class Film:
     ''' The film stores the image after it has been rendered.
@@ -41,7 +42,7 @@ class Camera:
     
 class World:
     '''The World encompasses the entire scene, including all the
-    object such as mesh, lights, and essentially contain atleast one
+    object such as objects, lights, and essentially contain atleast one
     camera. Without a camera, the scene cannot be rendered.
     '''
 
@@ -50,8 +51,8 @@ class World:
         is not supported.
         '''
 
-        ## Contains all the meshes present in the scene.
-        self._meshes = dict()
+        ## Contains all the objects present in the scene.
+        self._objects= dict()
         ## Contains all the lights present in the scene.
         self._lights = dict()
         ## Contains all the cameras present in the scene.
@@ -60,17 +61,16 @@ class World:
     def __repr__(self,):
         ''' Return info about the current scene. '''
         return "Not supported yet."
-        # TODO H: Return string of all the lights camera and meshes in
+        # TODO H: Return string of all the lights camera and objects in
         # current scene.
 
-    def add_mesh(self, mesh: Mesh):
-        '''! Adds a mesh to the world.
-         @param mesh The mesh to be added.
+    def add_object(self, obj: Object):
+        '''! Adds a objects to the world.
+         @param obj The object to be added.
          @return Nothing is returned.
         '''
         pass
-        # TODO H: Create a Mesh class.
-        # TODO A: Check if the input is a Mesh and add it to self._meshes
+        # TODO A: Check if the input is a Object and add it to self._objects
 
     def add_light(self, light: Light):
         '''! Adds a light to the world.
