@@ -8,6 +8,9 @@ class Ray:
         @param origin The origin of the ray
         @param dir The direction towards which the Ray points at.
         '''
-        # TODO H: Write the constructor.
-        pass
+        self.origin = origin
+        self.dir = dir
+
+    def at(self, t):
+        return self.origin + self.dir * t
 

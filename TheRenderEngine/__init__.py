@@ -1,5 +1,6 @@
 from constants import *
 from primitives import Object
+import numpy
 
 class Film:
     ''' The film stores the image after it has been rendered.
@@ -13,9 +14,11 @@ class Camera:
     The Camera is when added to a scene makes it renderable. Without a Camera
     a scene cannot be rendered.
     '''
+    PERSPECTIVE = 0
+    ORTHOGRAPHIC = 1
 
     def __init__(self, position, direction, film: Film,
-    up=[0, 1, 0], projection=PERSPECTIVE, clip_start=.1, clip_end=100):
+    up=numpy.array([0, 1, 0]), projection=PERSPECTIVE, clip_start=.1, clip_end=100):
         '''The Camera constuctor. Creates a new camera.
         @param position The position of the camera in the World.
         @param direction The direction the camera is pointing at.
@@ -26,13 +29,35 @@ class Camera:
         @param clip_start The nearest cliping distance.
         @param clip_end The nearest cliping distance.
         '''
-        pass
         # TODO H: Create internal variables for the above parameters so that we
         # can use it.
+        self.position = position
+        self.direction = direction
+        self.film = film
+        
+        norm = numpy.linalg.norm(up)
+        # avoid division by zero
+        if norm != 0:
+            self.up = up / norm
+        else:
+            self.up = up
+
+        self.projection = projection
+        self.clip_start = clip_start
+        self.clip_end = clip_end
+
     def __repr__(self,):
         ''' Returns a representation of the camera.'''
-        pass
         # TODO H: Add the camera's info string.
+        return (
+            f"Camera(position={self.position}, "
+            f"direction={self.direction}, "
+            f"film={self.film}, "
+            f"up={self.up}, "
+            f"projection={self.projection}, "
+            f"clip_start={self.clip_start}, "
+            f"clip_end={self.clip_end})"
+        )
 
     def _render(self, world):
         ''' The main rendering takes place here and the result is stored
@@ -99,4 +124,3 @@ class World:
         camera film.
         '''
         pass
-
