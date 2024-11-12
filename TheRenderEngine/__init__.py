@@ -14,8 +14,6 @@ class Camera:
     The Camera is when added to a scene makes it renderable. Without a Camera
     a scene cannot be rendered.
     '''
-    PERSPECTIVE = 0
-    ORTHOGRAPHIC = 1
 
     def __init__(self, position, direction, film: Film,
     up=numpy.array([0, 1, 0]), projection=PERSPECTIVE, clip_start=.1, clip_end=100):
