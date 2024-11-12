@@ -29,19 +29,27 @@ class Camera:
         '''
         # TODO H: Create internal variables for the above parameters so that we
         # can use it.
+
+        ## The position of the camera in the World.
         self.position = position
+        ## The direction the camera is pointing at.
         self.direction = direction
+        ## The camera's film which will store the image.
         self.film = film
         
         norm = numpy.linalg.norm(up)
-        # avoid division by zero
-        if norm != 0:
+        if norm != 0:	# avoid division by zero
+            ## The up-axis of the camera. Defaults to Y-up, i.e, [0, 1, 0].
             self.up = up / norm
         else:
+            ## The up-axis of the camera. Defaults to Y-up, i.e, [0, 1, 0].
             self.up = up
 
+        ## The camera's projection, can be either `PERSPECTIVE` or `ORTHOGRAPHIC`. Defaults to `PERSPECTIVE`
         self.projection = projection
+        ## The nearest cliping distance.
         self.clip_start = clip_start
+        ## The nearest cliping distance.
         self.clip_end = clip_end
 
     def __repr__(self,):

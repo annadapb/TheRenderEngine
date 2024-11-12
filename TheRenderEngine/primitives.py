@@ -2,6 +2,10 @@ from abc import ABC, abstractmethod
 from utils import Ray, Color, Vec3, Vec3n, Mat4
 
 class Object(ABC):
+    ''' The abstract base class of Object that all inherited class should
+    implement.
+    '''
+
     @abstractmethod
     def hit(self, ray: Ray) -> Tuple[bool, float, Color]:
         ''' All objects should provide a hit function. Currently the
@@ -56,7 +60,6 @@ class Sphere(Object):
     def __init__(self, radius=1.,):
         ''' The Sphere constructior.
         @param radius The radius of the sphere.
-        @param position The location of the sphere.
         '''
         pass
 

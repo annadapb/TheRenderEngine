@@ -20,6 +20,8 @@ class Vec3:
         '''
         pass
 
+class Mat4:
+    ''' The class to store a 4x4 transformation matrix '''
 
 
 class Color:
@@ -32,9 +34,15 @@ class Ray:
         @param origin The origin of the ray
         @param dir The direction towards which the Ray points at.
         '''
+        ## The origin of the ray
         self.origin = origin
+        ## The direction towards which the Ray points at.
         self.dir = dir
 
     def at(self, t):
+        ''' Compute the location the ray is at after time t.
+        @param t The time elapsed.
+        @return The location of the ray.
+        '''
         return self.origin + self.dir * t
 
