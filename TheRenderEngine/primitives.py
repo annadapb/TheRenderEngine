@@ -66,6 +66,17 @@ class Sphere(Object):
         self.radius = radius
 
     def hit(ray: Ray, center: Vec3, radius) -> float:
+        '''Determines the intersection point of a ray with a sphere.
+        @param ray: Ray
+            The ray to check for intersection, defined by an origin and direction.
+        @param center: Vec3
+            The center of the sphere.
+        @param radius: float
+            The radius of the sphere.
+        @return: float
+            The distance from the ray's origin to the intersection point along the ray's direction.
+            Returns -1.0 if there is no intersection.
+        '''
         oc = center - ray.origin
         a = dot(ray.dir, ray.dir)
         b = dot(ray.dir, oc)

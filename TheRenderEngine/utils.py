@@ -11,6 +11,12 @@ class Vec3:
         self.z = z
 
     def __sub__(self, other):
+        ''' Subtracts another Vec3 object from this Vec3.
+        @param other: Vec3
+            The other 3D vector to subtract from this vector
+        @return: Vec3
+            A new Vec3 object representing the result of the subtraction
+        '''
         return Vec3(self.x - other.x, self.y - other.y, self.z - other.z)
 
     def norm(self,) -> float:
@@ -27,15 +33,22 @@ class Vec3:
 
 
 def dot(u: Vec3, v: Vec3) -> float:
+    ''' Calculates the dot product of two Vec3 objects.
+    @param u: Vec3
+        The first 3D vector.
+    @param v: Vec3
+        The second 3D vector.
+    @return: float
+        The dot product of the two vectors.
+    '''
     return (u.x * v.x) + (u.y * v.y) + (u.z * v.z)
 
 class Mat4:
     ''' The class to store a 4x4 transformation matrix '''
 
-
 class Color:
     ''' A color object that stores a color '''
-
+    
 class Ray:
     ''' A single ray object that has a origin and direction '''
     def __init__(self, origin: Vec3, dir: Vec3n):
