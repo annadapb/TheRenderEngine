@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from utils import Ray, Color, Vec3, Vec3n, Mat4
+from utils import Ray, Color, Vec3, Vec3n, Mat4, dot
+import numpy
 
 class Object(ABC):
     ''' The abstract base class of Object that all inherited class should
@@ -57,10 +58,22 @@ class Object(ABC):
 
 class Sphere(Object):
     ''' The Sphere primitive that can be added to the scene. '''
-    def __init__(self, radius=1.,):
+    def __init__(self, center: Vec3, radius=1.,):
         ''' The Sphere constructior.
         @param radius The radius of the sphere.
         '''
-        pass
+        self.center = center
+        self.radius = radius
 
-        ''' TODO H: write all the functions that the Object base class requires '''
+    def hit(ray: Ray, center: Vec3, radius) -> float:
+        oc = center - ray.origin
+        a = dot(ray.dir, ray.dir)
+        b = dot(ray.dir, oc)
+        c = dot(oc, oc) - (radius * radius)
+        disc = (b * b) - (a * c)
+
+        if disc < 0:
+            return -1.0
+        
+        return (-b - numpy.sqrt(disc)) / a
+        

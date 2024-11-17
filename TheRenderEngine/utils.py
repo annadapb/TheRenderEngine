@@ -6,7 +6,12 @@ class Vec3:
         @param y The y component
         @param z The z component
         '''
-        pass
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __sub__(self, other):
+        return Vec3(self.x - other.x, self.y - other.y, self.z - other.z)
 
     def norm(self,) -> float:
         ''' Returns the norm (length of the vector) without changing the vector.
@@ -19,6 +24,10 @@ class Vec3:
         @return The norm (length) of the vector.
         '''
         pass
+
+
+def dot(u: Vec3, v: Vec3) -> float:
+    return (u.x * v.x) + (u.y * v.y) + (u.z * v.z)
 
 class Mat4:
     ''' The class to store a 4x4 transformation matrix '''

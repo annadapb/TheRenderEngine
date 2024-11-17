@@ -27,9 +27,6 @@ class Camera:
         @param clip_start The nearest cliping distance.
         @param clip_end The nearest cliping distance.
         '''
-        # TODO H: Create internal variables for the above parameters so that we
-        # can use it.
-
         ## The position of the camera in the World.
         self.position = position
         ## The direction the camera is pointing at.
@@ -54,7 +51,6 @@ class Camera:
 
     def __repr__(self,):
         ''' Returns a representation of the camera.'''
-        # TODO H: Add the camera's info string.
         return (
             f"Camera(position={self.position}, "
             f"direction={self.direction}, "
