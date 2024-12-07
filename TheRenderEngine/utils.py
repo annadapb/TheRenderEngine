@@ -6,8 +6,11 @@ class Vec3:
         @param y The y component
         @param z The z component
         '''
+        ## The x component
         self.x = x
+        ## The y component
         self.y = y
+        ## The z component
         self.z = z
 
     def __sub__(self, other):

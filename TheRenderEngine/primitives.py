@@ -60,9 +60,12 @@ class Sphere(Object):
     ''' The Sphere primitive that can be added to the scene. '''
     def __init__(self, center: Vec3, radius=1.,):
         ''' The Sphere constructior.
+        @param center The center position of the sphere in the scene.
         @param radius The radius of the sphere.
         '''
+        ## The center position of the sphere in the scene
         self.center = center
+        ## The radius of the sphere
         self.radius = radius
 
     def hit(ray: Ray, center: Vec3, radius) -> float:

@@ -18,9 +18,13 @@ class Light:
         @param intensity The brightness of the light (default: 1.0).
         @param light_type The type of light, can be either `POINT` or other. Defaults to `POINT`
         '''
+        ## The position of the light in the World.
         self.position = position
+        ## Color of the light.
         self.color = color
+        ## Brightness of the light.
         self.intensity = intensity
+        ## The type of the light.
         self.light_type = light_type
 
     def set_position(self, position: Vec3):
