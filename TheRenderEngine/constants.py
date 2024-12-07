@@ -1,1 +1,2 @@
 (PERSPECTIVE, ORTHOGRAPHIC, ) = range(2)
+(POINT) = range(1)

@@ -1,6 +1,7 @@
 from constants import *
 from primitives import Object
 import numpy
+from utils import Vec3
 
 class Film:
     ''' The film stores the image after it has been rendered.
@@ -9,6 +10,30 @@ class Mesh:
     ''' The meshes in the scene. '''
 class Light:
     ''' The lights in the scene. '''
+
+    def __init__(self, position: Vec3, color=Vec3(1.0, 1.0, 1.0), intensity=1.0, light_type=POINT):
+        self.position = position
+        self.color = color
+        self.intensity = intensity
+        self.light_type = light_type
+
+    def set_position(self, position: Vec3):
+        self.position = position
+
+    def set_color(self, color: Vec3):
+        self.color = color
+
+    def set_intensity(self, intensity: float):
+        self.intensity = intensity
+
+    def __repr__(self):
+        return (
+            f"Light(type={self.light_type}, "
+            f"position={self.position}, "
+            f"color={self.color}, "
+            f"intensity={self.intensity})"
+        )
+
 class Camera:
     '''
     The Camera is when added to a scene makes it renderable. Without a Camera
@@ -105,7 +130,6 @@ class World:
         @return Nothing is returned.
         '''
         pass
-        # TODO H: Create a Light class.
         # TODO A: Check if the input is a Light and add it to self._lights
  
     def add_camera(self, camera: Camera):
