@@ -12,21 +12,34 @@ class Light:
     ''' The lights in the scene. '''
 
     def __init__(self, position: Vec3, color=Vec3(1.0, 1.0, 1.0), intensity=1.0, light_type=POINT):
+        '''The Light constuctor. Creates a new POINT light by default.
+        @param position The position of the light source in the World.
+        @param color Vec3 (r, g, b) for the light color (default: white).
+        @param intensity The brightness of the light (default: 1.0).
+        @param light_type The type of light, can be either `POINT` or other. Defaults to `POINT`
+        '''
         self.position = position
         self.color = color
         self.intensity = intensity
         self.light_type = light_type
 
     def set_position(self, position: Vec3):
+        '''Set the position of the light.
+        @param position The position of the light source'''
         self.position = position
 
     def set_color(self, color: Vec3):
+        '''Set the color of the light.
+        @param color Vec3 (r, g, b) for the light color'''
         self.color = color
 
     def set_intensity(self, intensity: float):
+        '''Set the intensity of the light.
+        @param intensity The brightness of the light'''
         self.intensity = intensity
 
     def __repr__(self):
+        '''Return a representation of the light.'''
         return (
             f"Light(type={self.light_type}, "
             f"position={self.position}, "
